@@ -1,18 +1,26 @@
 #include <latch>
+#include <optional>
 
 class waitgroup{
    public :
-   waitgroup(int num):group(num){}
+   explicit waitgroup(int num):valid_(num>0){
+     //负数情况下直接非阻塞
+     if (num<0) group.emplace(0);
+     else group.emplace(num);
+   }
 
    void Done(){
-        group.count_down();
+     if (valid_)
+        group->count_down();
    }
 
    void Wait(){
-        group.wait();
+     if (valid_)
+        group->wait();
    }
 
 
    private:
-   std::latch group;
+   bool valid_;
+   std::optional<std::latch> group;
 };
