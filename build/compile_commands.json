@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/var/parallel-work/build",
+  "command": "/usr/bin/g++   -g -std=gnu++20 -Wall -Wextra -pedantic -o CMakeFiles/main.dir/main.cpp.o -c /var/parallel-work/main.cpp",
+  "file": "/var/parallel-work/main.cpp",
+  "output": "CMakeFiles/main.dir/main.cpp.o"
+}
+]

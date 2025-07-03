@@ -5,8 +5,7 @@ class waitgroup{
    public :
    explicit waitgroup(int num):valid_(num>0){
      //负数情况下直接非阻塞
-     if (num<0) group.emplace(0);
-     else group.emplace(num);
+     if (num>0) group.emplace(num);
    }
 
    void Done(){

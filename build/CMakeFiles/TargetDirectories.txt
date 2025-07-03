@@ -1,0 +1,3 @@
+/var/parallel-work/build/CMakeFiles/main.dir
+/var/parallel-work/build/CMakeFiles/edit_cache.dir
+/var/parallel-work/build/CMakeFiles/rebuild_cache.dir
