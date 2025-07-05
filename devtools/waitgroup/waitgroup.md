@@ -1,6 +1,6 @@
 # waitgroup
 
-该工具旨在使用waitgroup类来同步并行计算部分，降低并行同步难度
+该工具旨在使用waitgroup类来同步并行计算部分，降低并行同步难度，这个是从线程层次上的阻塞
 
 通用	现代 C++ 项目首选(c++20)
 
@@ -48,10 +48,11 @@
             test(i,a);
         });
     }
-    for (int i=0;i<5;i++){
-        threads[i].join();
-    }
     //等待同步
     a.Wait();
+    //回收线程
+     for (int i=0;i<5;i++){
+        threads[i].join();
+    }
 ```
 

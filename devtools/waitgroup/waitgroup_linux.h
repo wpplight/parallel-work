@@ -1,3 +1,5 @@
+#pragma once
+
 #include <atomic>
 #include <linux/futex.h>
 #include <sys/syscall.h>

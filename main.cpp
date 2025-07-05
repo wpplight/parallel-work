@@ -11,17 +11,18 @@ void test(int id,waitgroup &wg){
 
 int main()
 {
-    waitgroup a(-2);
-    std::thread threads[5];
-    for (int i = 0; i < 5; i++)
+    waitgroup a(10);
+    std::thread threads[10];
+    for (int i = 0; i < 10; i++)
     {
         threads[i]=thread ([i,&a]{
             test(i,a);
         });
     }
-    for (int i=0;i<5;i++){
+     a.Wait();
+    cout<<"done"<<endl;
+    for (int i=0;i<10;i++){
         threads[i].join();
     }
-    a.Wait();
-    cout<<"done"<<endl;
+   
 }
